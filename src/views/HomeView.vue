@@ -1,5 +1,8 @@
 <template>
-  <main v-if="!loading"><DataTitle :text="title" :dataDate="dataDate" /></main>
+  <main v-if="!loading">
+    <DataTitle :text="title" :dataDate="dataDate" />
+    <DataBoxes :stats="stats" />
+  </main>
   <main class="flex flex-col align-center justify-center text-center" v-else>
     <div class="text-gray-500 text-3xl mt-10 mb-6">Fetching Data</div>
     <img
@@ -12,10 +15,11 @@
 
 <script>
 import DataTitle from "@/components/DataTitle.vue";
+import DataBoxes from "@/components/DataBoxes.vue";
 
 export default {
   name: "HomeView",
-  components: { DataTitle },
+  components: { DataTitle, DataBoxes },
   data() {
     return {
       loading: true,
