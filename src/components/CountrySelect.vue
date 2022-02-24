@@ -1,5 +1,6 @@
 <template>
   <select
+    @change="onChange()"
     v-model="selected"
     class="form-select mt-10 block w-full border p-3 rounded"
   >
@@ -18,6 +19,15 @@ export default {
     return {
       selected: 0,
     };
+  },
+  methods: {
+    onChange() {
+      const country = this.countries.find(
+        (item) => item.Country === this.selected
+      );
+
+      this.$emit("get-country", country);
+    },
   },
 };
 </script>
