@@ -8,7 +8,8 @@
     "test:e2e": "vue-cli-service test:e2e",
     "lint": "vue-cli-service lint",
     "cy:open": "cypress open",
-    "cy:run": "cypress run"
+    "cy:run": "cypress run",
+    "deploy": "sh deploy.sh"
   },
   "dependencies": {
     "@tailwindcss/postcss7-compat": "^2.2.17",

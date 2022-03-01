@@ -1,5 +1,3 @@
-// https://docs.cypress.io/api/table-of-contents
-
 /// <reference types="cypress" />
 
 const URL = "http://192.168.1.8:8080/";
