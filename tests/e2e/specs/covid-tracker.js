@@ -19,4 +19,21 @@ context("COVID-19 Tracker App", () => {
       cy.get("select").should("exist");
     });
   });
+  describe("Functionality", () => {
+    it("Make sure the global data is loaded after mounting", () => {
+      cy.visit(URL);
+      cy.get("main div").should("contain", "Fetching Data");
+      cy.wait(500);
+      cy.get("main div").should("not.contain", "Fetching Data");
+      cy.get("h2").should("contain", "Global");
+    });
+    it("Load up country data and return to global data", () => {
+      cy.get("select").select("Argentina");
+      cy.get("button").should("exist");
+      cy.get("h2").should("contain", "Argentina");
+      cy.get("button").click();
+      cy.get("h2").should("contain", "Global");
+      cy.get("button").should("not.exist");
+    });
+  });
 });
