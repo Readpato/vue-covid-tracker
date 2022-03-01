@@ -35,11 +35,11 @@ This will allow to download the dependencies you need to run the COVID-19 Tracke
 
 The COVID Tracker will automatically load some information for us when loaded. Two cards will appear respectively containing global information depicting cases (new and total) and deaths(new and total).
 
-<img  src="#" align="center">
+<img  src="https://github.com/Readpato/vue-covid-tracker/blob/main/src/images/covid-tracker-1.png" align="center">
 
 If the client desires, he can choose a country from the list and that will automatically connect the web application to the API and fetch the COVID-19 data from the chosen country. Then, a button will render that will allow the user to delete the country data and go back to the default global data.
 
-<img  src="#" align="center">
+<img  src="https://github.com/Readpato/vue-covid-tracker/blob/main/src/images/covid-tracker-2.png" align="center">
 
 #
 
