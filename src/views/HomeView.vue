@@ -4,6 +4,7 @@
     <DataBoxes :stats="stats" />
     <CountrySelect @get-country="getCountryData" :countries="countries" />
     <button
+      v-if="!showButton"
       @click="clearCountryData"
       class="bg-green-700 text-white rounded p-3 mt-10 mx-auto focus:outline-none hover:bg-green-600"
     >
@@ -24,7 +25,7 @@
 import DataTitle from "@/components/DataTitle.vue";
 import DataBoxes from "@/components/DataBoxes.vue";
 import CountrySelect from "@/components/CountrySelect.vue";
-// v-if="stats.Country"
+
 export default {
   name: "HomeView",
   components: { DataTitle, DataBoxes, CountrySelect },
@@ -36,6 +37,7 @@ export default {
       stats: {},
       countries: [],
       loadingImage: require("../assets/hourglass.gif"),
+      showButton: true,
     };
   },
   methods: {
@@ -45,6 +47,7 @@ export default {
       return data;
     },
     getCountryData(country) {
+      this.showButton = false;
       this.stats = country;
       this.title = country.Country;
     },
@@ -54,6 +57,7 @@ export default {
       this.title = "Global";
       this.stats = covidData.Global;
       this.loading = false;
+      this.showButton = true;
     },
   },
   async created() {
